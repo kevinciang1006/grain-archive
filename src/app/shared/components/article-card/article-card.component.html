@@ -1,0 +1,23 @@
+<article class="card">
+  <a [routerLink]="['/archive']" class="card__image-link">
+    <div class="card__image-wrap">
+      <img
+        [src]="article().imageUrl"
+        [alt]="article().imageAlt"
+        class="card__image"
+        loading="lazy"
+      />
+    </div>
+  </a>
+
+  <div class="card__body">
+    <div class="card__meta">
+      <app-category-badge [category]="article().category" />
+      <time class="card__date">{{ article().date }}</time>
+    </div>
+
+    <h3 class="card__title">
+      <a [routerLink]="['/archive']">{{ article().title }}</a>
+    </h3>
+  </div>
+</article>

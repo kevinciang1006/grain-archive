@@ -1,0 +1,109 @@
+// =============================================================================
+// Design Tokens — Grain Archive
+// Derived from Gritty Culture Blog Figma template
+// =============================================================================
+
+:root {
+  // Colors — Backgrounds
+  --color-bg-base:       #0a0a0a;
+  --color-bg-surface:    #111111;
+  --color-bg-elevated:   #1a1a1a;
+  --color-bg-muted:      #141414;
+
+  // Colors — Text
+  --color-text-primary:  #f0ebe1;
+  --color-text-secondary: #9a9080;
+  --color-text-muted:    #5a5550;
+  --color-text-inverse:  #0a0a0a;
+
+  // Colors — Accents
+  --color-accent:        #c8b89a;
+  --color-accent-dim:    #8a7860;
+  --color-accent-warm:   #d4a97a;
+
+  // Colors — Borders / Dividers
+  --color-border:        #2a2520;
+  --color-border-subtle: #1e1c1a;
+
+  // Typography — Font Families
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+
+  // Typography — Font Sizes (4px grid, major third scale)
+  --text-xs:   0.75rem;   // 12px
+  --text-sm:   0.875rem;  // 14px
+  --text-base: 1rem;      // 16px
+  --text-lg:   1.125rem;  // 18px
+  --text-xl:   1.25rem;   // 20px
+  --text-2xl:  1.5rem;    // 24px
+  --text-3xl:  1.875rem;  // 30px
+  --text-4xl:  2.25rem;   // 36px
+  --text-5xl:  3rem;      // 48px
+  --text-6xl:  3.75rem;   // 60px
+  --text-7xl:  4.5rem;    // 72px
+  --text-8xl:  6rem;      // 96px
+  --text-9xl:  8rem;      // 128px
+
+  // Typography — Weights
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  // Typography — Line Heights
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose:  2;
+
+  // Typography — Letter Spacing
+  --tracking-tight:   -0.03em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+  // Spacing — 4px grid
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+  --space-40:  160px;
+
+  // Layout
+  --container-max:     1200px;
+  --container-wide:    1400px;
+  --container-narrow:  800px;
+  --container-padding: var(--space-6);
+
+  // Border Radius
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-full: 9999px;
+
+  // Transitions
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.2s ease;
+  --transition-slow:   0.3s ease;
+
+  // Z-Index
+  --z-navbar: 100;
+  --z-modal:  200;
+  --z-overlay: 50;
+
+  // Navbar
+  --navbar-height: 72px;
+}

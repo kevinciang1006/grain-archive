@@ -1,0 +1,32 @@
+<section class="cinema">
+  <div class="cinema__inner">
+    <app-section-divider label="Cinema Selects" />
+
+    <div class="cinema__header">
+      <h2 class="cinema__title">Films worth your time</h2>
+    </div>
+
+    <div class="cinema__table-wrap">
+      <table class="cinema__table">
+        <thead>
+          <tr>
+            <th class="cinema__th cinema__th--film">Film</th>
+            <th class="cinema__th cinema__th--year">Year</th>
+            <th class="cinema__th cinema__th--mood cinema__th--hide-mobile">Mood</th>
+            <th class="cinema__th cinema__th--why cinema__th--hide-mobile">Why Watch</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (film of films; track film.title) {
+            <tr class="cinema__row">
+              <td class="cinema__td cinema__td--film">{{ film.title }}</td>
+              <td class="cinema__td cinema__td--year">{{ film.year }}</td>
+              <td class="cinema__td cinema__td--mood cinema__td--hide-mobile">{{ film.mood }}</td>
+              <td class="cinema__td cinema__td--why cinema__td--hide-mobile">{{ film.whyWatch }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
