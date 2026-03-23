@@ -20,6 +20,9 @@
       scroll-snap-align: start;
     }
   }
+  app-article-card {
+    display: contents;
+  }
 }
 
 .view-all {

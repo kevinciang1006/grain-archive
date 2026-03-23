@@ -28,11 +28,6 @@ import { NewsletterComponent } from './sections/newsletter/newsletter.component'
   ],
   styles: [`
     .home-ticker {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 6;
       height: 60px;
       overflow: hidden;
       display: flex;
@@ -65,7 +60,6 @@ import { NewsletterComponent } from './sections/newsletter/newsletter.component'
       padding: 0 10px 10px;
       max-width: 1800px;
       margin: 0 auto;
-      padding-top: 124px;
     }
   `],
   template: `
@@ -79,7 +73,7 @@ import { NewsletterComponent } from './sections/newsletter/newsletter.component'
         <span aria-hidden="true">·</span>
       </div>
     </div>
-    <app-navbar [topOffset]="60" />
+    <app-navbar />
     <main @fadeIn>
       <app-hero />
       <app-article-grid />
