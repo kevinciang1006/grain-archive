@@ -1,43 +1,43 @@
-<section class="newsletter">
-  <div class="newsletter__grain" aria-hidden="true"></div>
+<section class="newsletter" aria-label="Newsletter signup">
+  <!-- Left hole-punch strip -->
+  <div class="newsletter__strip newsletter__strip--left" aria-hidden="true">
+    <span class="newsletter__hole"></span>
+    <span class="newsletter__hole"></span>
+    <span class="newsletter__hole"></span>
+  </div>
 
+  <!-- Main content -->
   <div class="newsletter__inner">
-    @if (!submitted()) {
-      <div class="newsletter__content">
-        <h2 class="newsletter__title">Tune into the signal</h2>
-        <p class="newsletter__sub">No noise — just deep cuts on music, film, and culture</p>
-      </div>
+    <div class="newsletter__content">
+      <h2 class="newsletter__title">Tune into the signal</h2>
+      <p class="newsletter__sub">No noise — just deep cuts on music, film, and culture</p>
+    </div>
 
+    @if (!submitted()) {
       <form class="newsletter__form" (ngSubmit)="onSubmit()">
-        <div class="newsletter__field">
-          <label for="newsletter-email" class="sr-only">Email address</label>
-          <input
-            id="newsletter-email"
-            type="email"
-            class="newsletter__input"
-            placeholder="your@email.com"
-            [ngModel]="email()"
-            (ngModelChange)="email.set($event)"
-            name="email"
-            required
-            autocomplete="email"
-          />
-          <button type="submit" class="newsletter__btn">
-            Subscribe
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
-        </div>
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input
+          id="newsletter-email"
+          type="email"
+          class="newsletter__input"
+          placeholder="your@email.com"
+          [ngModel]="email()"
+          (ngModelChange)="email.set($event)"
+          name="email"
+          required
+          autocomplete="email"
+        />
+        <button type="submit" class="newsletter__btn">Subscribe</button>
       </form>
     } @else {
-      <div class="newsletter__thanks">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        <p class="newsletter__thanks-text">You're in. Signal received.</p>
-      </div>
+      <p class="newsletter__thanks">Signal received.</p>
     }
+  </div>
+
+  <!-- Right hole-punch strip -->
+  <div class="newsletter__strip newsletter__strip--right" aria-hidden="true">
+    <span class="newsletter__hole"></span>
+    <span class="newsletter__hole"></span>
+    <span class="newsletter__hole"></span>
   </div>
 </section>

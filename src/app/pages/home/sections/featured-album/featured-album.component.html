@@ -1,31 +1,26 @@
-<section class="album">
-  <div class="album__inner">
-    <div class="album__image-wrap">
-      <img
-        src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=600&q=80"
-        alt="False Memory by Artifact — abstract dark album artwork with layers of texture"
-        class="album__image"
-      />
-    </div>
+<section class="album" aria-label="Featured Album">
+  <!-- Background grain texture -->
+  <div class="album__grain" aria-hidden="true"></div>
 
-    <div class="album__content">
-      <span class="album__label">Now Listening</span>
-      <h2 class="album__title">False Memory</h2>
-      <p class="album__artist">by Artifact</p>
-      <p class="album__description">
-        A record that sounds like something you almost remember. Layered synthesis,
-        field recordings, and a silence that hums. Our album of the season.
-      </p>
+  <!-- "Featured Album" heading — absolute top-left -->
+  <h2 class="album__heading" aria-label="Featured Album section">Featured Album</h2>
+
+  <!-- Centered album art + info -->
+  <div class="album__content">
+    <img
+      src="https://images.pexels.com/photos/167092/pexels-photo-167092.jpeg?auto=compress&cs=tinysrgb&w=800"
+      alt="False Memory by Artifact — dark textured album artwork"
+      class="album__image"
+    />
+    <div class="album__info">
+      <p class="album__name">False Memory by Artifact</p>
       <a href="#" class="album__cta">
-        Listen now
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+          <polygon points="10,8 16,12 10,16" fill="currentColor"/>
         </svg>
+        Listen now
       </a>
     </div>
   </div>
-
-  <!-- Grain overlay -->
-  <div class="album__grain" aria-hidden="true"></div>
 </section>

@@ -6,3 +6,10 @@
 @use 'styles/reset' as *;
 @use 'styles/typography' as *;
 @use 'styles/mixins' as *;
+
+body {
+  background-color: var(--color-bg-1);
+  color: var(--color-text-1);
+  font-family: var(--font-geist);
+  font-feature-settings: "'ss01' 1, 'ss03' 1";
+}

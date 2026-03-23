@@ -1,74 +1,48 @@
 // =============================================================================
 // Design Tokens — Grain Archive
-// Derived from Gritty Culture Blog Figma template
+// Extracted from Figma file 9hoxleKIhV6hpNKfUR3GaC via MCP
 // =============================================================================
 
 :root {
-  // Colors — Backgrounds
-  --color-bg-base:       #0a0a0a;
-  --color-bg-surface:    #111111;
-  --color-bg-elevated:   #1a1a1a;
-  --color-bg-muted:      #141414;
+  // Colors — Backgrounds (exact Figma values)
+  --color-bg-1:     #0F0E0E;   // Main dark background, footer
+  --color-bg-2:     #1F1F1F;   // Elevated card
+  --color-bg-3:     #F5F5F5;   // Cinema Selects (light section!)
+  --color-bg-4:     #FFFFFF;   // "View all" button
+  --color-bg-album: #141414;   // Featured Album card
+
+  // Colors — Accent / Interactive
+  --color-orange: #FF5700;  // Nav Home button
+  --color-green:  #32CE57;  // Nav Archive button
+  --color-blue:   #A3CAFF;  // Nav About button
 
   // Colors — Text
-  --color-text-primary:  #f0ebe1;
-  --color-text-secondary: #9a9080;
-  --color-text-muted:    #5a5550;
-  --color-text-inverse:  #0a0a0a;
+  --color-text-1:  #F6F8FB;   // Primary on dark
+  --color-text-2:  #0F0E0E;   // Primary on light
+  --color-text-3:  #8C8D92;   // Muted/meta
+  --color-text-4:  #D1D2D8;   // Footer links
 
-  // Colors — Accents
-  --color-accent:        #c8b89a;
-  --color-accent-dim:    #8a7860;
-  --color-accent-warm:   #d4a97a;
+  // Colors — Dividers
+  --color-divider:       #555659;   // Table dashed rows
+  --color-divider-lines: #E9E9E9;   // Section label dividers
 
-  // Colors — Borders / Dividers
-  --color-border:        #2a2520;
-  --color-border-subtle: #1e1c1a;
+  // Typography — Font Families (exact Figma fonts)
+  --font-tilt:       'Tilt Warp', sans-serif;        // Headers H1–H3, H5, Footer logo
+  --font-instrument: 'Instrument Serif', serif;      // H4 italic, CTA headings
+  --font-geist:      'Geist', system-ui, sans-serif; // Body, UI, captions
 
-  // Typography — Font Families
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono:    'Space Mono', 'Courier New', monospace;
+  // Typography — Figma-exact sizes
+  --text-h1:       200px;  // Tilt Warp, lh 0.85, ls -4px
+  --text-h2:       160px;  // Tilt Warp, lh 0.80, ls -8px
+  --text-h3:       110px;  // Tilt Warp, lh 0.95, ls -4.4px
+  --text-h4:        80px;  // Instrument Serif Italic, lh 0.9, ls -1.6px
+  --text-h5:        24px;  // Tilt Warp, lh 1.4, ls -0.48px
+  --text-p1:        20px;  // Geist, lh 1.4, ls -0.4px
+  --text-p2:        16px;  // Geist, lh 1.4, ls -0.32px
+  --text-caption:   10px;  // Geist SemiBold, lh 1.4, ls +0.4px, uppercase
 
-  // Typography — Font Sizes (4px grid, major third scale)
-  --text-xs:   0.75rem;   // 12px
-  --text-sm:   0.875rem;  // 14px
-  --text-base: 1rem;      // 16px
-  --text-lg:   1.125rem;  // 18px
-  --text-xl:   1.25rem;   // 20px
-  --text-2xl:  1.5rem;    // 24px
-  --text-3xl:  1.875rem;  // 30px
-  --text-4xl:  2.25rem;   // 36px
-  --text-5xl:  3rem;      // 48px
-  --text-6xl:  3.75rem;   // 60px
-  --text-7xl:  4.5rem;    // 72px
-  --text-8xl:  6rem;      // 96px
-  --text-9xl:  8rem;      // 128px
-
-  // Typography — Weights
-  --weight-regular: 400;
-  --weight-medium:  500;
-  --weight-semibold: 600;
-  --weight-bold:    700;
-  --weight-black:   900;
-
-  // Typography — Line Heights
-  --leading-tight:  1.1;
-  --leading-snug:   1.25;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.65;
-  --leading-loose:  2;
-
-  // Typography — Letter Spacing
-  --tracking-tight:   -0.03em;
-  --tracking-normal:  0;
-  --tracking-wide:    0.05em;
-  --tracking-wider:   0.1em;
-  --tracking-widest:  0.2em;
-
-  // Spacing — 4px grid
-  --space-1:   4px;
-  --space-2:   8px;
+  // Spacing (raw px matching Figma)
+  --space-2:    8px;
   --space-3:   12px;
   --space-4:   16px;
   --space-5:   20px;
@@ -79,31 +53,19 @@
   --space-16:  64px;
   --space-20:  80px;
   --space-24:  96px;
-  --space-32:  128px;
-  --space-40:  160px;
+  --space-30: 120px;
 
   // Layout
-  --container-max:     1200px;
-  --container-wide:    1400px;
-  --container-narrow:  800px;
-  --container-padding: var(--space-6);
-
-  // Border Radius
-  --radius-sm:   2px;
-  --radius-md:   4px;
-  --radius-lg:   8px;
-  --radius-full: 9999px;
+  --page-max:     1800px;
+  --page-padding:   10px;
+  --card-radius:     8px;
+  --card-gap:       10px;
 
   // Transitions
-  --transition-fast:   0.15s ease;
-  --transition-base:   0.2s ease;
-  --transition-slow:   0.3s ease;
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
 
   // Z-Index
-  --z-navbar: 100;
-  --z-modal:  200;
-  --z-overlay: 50;
-
-  // Navbar
-  --navbar-height: 72px;
+  --z-navbar: 5;
 }

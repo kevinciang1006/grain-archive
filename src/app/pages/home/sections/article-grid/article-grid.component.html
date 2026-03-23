@@ -1,21 +1,9 @@
-<section class="article-grid-section">
-  <div class="article-grid-section__inner">
-    <app-section-divider label="Latest from the Archive" />
+<div class="article-grid">
+  @for (article of articles; track article.id) {
+    <app-article-card [article]="article" />
+  }
+</div>
 
-    <div class="article-grid">
-      @for (article of articles; track article.id) {
-        <app-article-card [article]="article" />
-      }
-    </div>
-
-    <div class="article-grid-section__footer">
-      <a routerLink="/archive" class="article-grid-section__view-all">
-        View all articles
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
+<a routerLink="/archive" class="view-all">
+  View all articles
+</a>

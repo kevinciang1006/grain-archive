@@ -1,32 +1,23 @@
-<section class="cinema">
-  <div class="cinema__inner">
-    <app-section-divider label="Cinema Selects" />
+<section class="cinema" aria-label="Cinema Selects">
+  <h2 class="cinema__heading">Cinema Selects</h2>
 
-    <div class="cinema__header">
-      <h2 class="cinema__title">Films worth your time</h2>
+  <div class="cinema__table-wrap">
+    <!-- Header labels -->
+    <div class="cinema__labels">
+      <span class="cinema__label cinema__label--film">Film</span>
+      <span class="cinema__label cinema__label--year">Year</span>
+      <span class="cinema__label cinema__label--mood cinema__label--hide-mobile">Mood</span>
+      <span class="cinema__label cinema__label--why cinema__label--hide-mobile">Why Watch</span>
     </div>
 
-    <div class="cinema__table-wrap">
-      <table class="cinema__table">
-        <thead>
-          <tr>
-            <th class="cinema__th cinema__th--film">Film</th>
-            <th class="cinema__th cinema__th--year">Year</th>
-            <th class="cinema__th cinema__th--mood cinema__th--hide-mobile">Mood</th>
-            <th class="cinema__th cinema__th--why cinema__th--hide-mobile">Why Watch</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (film of films; track film.title) {
-            <tr class="cinema__row">
-              <td class="cinema__td cinema__td--film">{{ film.title }}</td>
-              <td class="cinema__td cinema__td--year">{{ film.year }}</td>
-              <td class="cinema__td cinema__td--mood cinema__td--hide-mobile">{{ film.mood }}</td>
-              <td class="cinema__td cinema__td--why cinema__td--hide-mobile">{{ film.whyWatch }}</td>
-            </tr>
-          }
-        </tbody>
-      </table>
-    </div>
+    <!-- Rows -->
+    @for (film of films; track film.title) {
+      <div class="cinema__row">
+        <span class="cinema__cell cinema__cell--film">{{ film.title }}</span>
+        <span class="cinema__cell cinema__cell--year">{{ film.year }}</span>
+        <span class="cinema__cell cinema__cell--mood cinema__cell--hide-mobile">{{ film.mood }}</span>
+        <span class="cinema__cell cinema__cell--why cinema__cell--hide-mobile">{{ film.whyWatch }}</span>
+      </div>
+    }
   </div>
 </section>

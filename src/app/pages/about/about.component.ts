@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { NavbarComponent } from '../../layout/navbar/navbar.component';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [NavbarComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [

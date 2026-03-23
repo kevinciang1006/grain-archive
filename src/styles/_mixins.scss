@@ -1,54 +1,23 @@
 // =============================================================================
-// Mixins
+// Mixins — Grain Archive
 // =============================================================================
 
-@mixin container($max: var(--container-max)) {
+// Page wrapper — max 1800px, 10px side padding
+@mixin page-wrap {
   width: 100%;
-  max-width: $max;
+  max-width: var(--page-max);
   margin-inline: auto;
-  padding-inline: var(--container-padding);
+  padding-inline: var(--page-padding);
+}
+
+// Card section base
+@mixin card-section {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  width: 100%;
 }
 
 @mixin mobile  { @media (max-width: 767px) { @content; } }
 @mixin tablet  { @media (min-width: 768px) and (max-width: 1199px) { @content; } }
 @mixin desktop { @media (min-width: 1200px) { @content; } }
 @mixin tablet-up { @media (min-width: 768px) { @content; } }
-
-@mixin grain-overlay($opacity: 0.04) {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-size: 256px 256px;
-    opacity: #{$opacity};
-    mix-blend-mode: overlay;
-  }
-}
-
-@mixin hover-lift {
-  transition: transform var(--transition-base);
-  &:hover { transform: translateY(-2px); }
-}
-
-@mixin image-hover-zoom {
-  overflow: hidden;
-
-  img {
-    transition: transform var(--transition-slow);
-    will-change: transform;
-  }
-
-  &:hover img {
-    transform: scale(1.04);
-  }
-}
-
-@mixin divider-line {
-  border: none;
-  border-top: 1px solid var(--color-border);
-}

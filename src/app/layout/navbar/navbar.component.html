@@ -1,37 +1,52 @@
-<header class="navbar" [class.navbar--scrolled]="scrolled()">
-  <div class="navbar__inner">
-    <!-- Logo -->
-    <a routerLink="/" class="navbar__logo" (click)="closeMenu()">
-      <span class="navbar__logo-text">Grain Archive</span>
+<nav class="navbar" aria-label="Main navigation" [style.top.px]="topOffset()">
+  <!-- Logo -->
+  <a routerLink="/" class="navbar__logo" aria-label="Grain Archive home" (click)="closeMenu()">
+    <img class="navbar__logo-img" src="logo.svg" alt="Grain Archive logo" />
+  </a>
+
+  <!-- Desktop nav links -->
+  <div class="navbar__links" role="list">
+    <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}"
+       class="navbar__btn navbar__btn--home" role="listitem"
+       aria-label="Navigate to homepage" (click)="closeMenu()">
+      Home
     </a>
-
-    <!-- Desktop Nav -->
-    <nav class="navbar__nav" aria-label="Main navigation">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}" class="navbar__link">Home</a>
-      <a routerLink="/archive" routerLinkActive="is-active" class="navbar__link">Archive</a>
-      <a routerLink="/about" routerLinkActive="is-active" class="navbar__link">About</a>
-    </nav>
-
-    <!-- Hamburger -->
-    <button
-      class="navbar__burger"
-      [class.is-open]="menuOpen()"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="menuOpen()"
-      aria-label="Toggle navigation menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <a routerLink="/archive" routerLinkActive="is-active"
+       class="navbar__btn navbar__btn--archive" role="listitem"
+       aria-label="Browse article archive" (click)="closeMenu()">
+      Archive
+    </a>
+    <a routerLink="/about" routerLinkActive="is-active"
+       class="navbar__btn navbar__btn--about" role="listitem"
+       aria-label="Learn more about Grain Archive" (click)="closeMenu()">
+      About
+    </a>
   </div>
 
-  <!-- Mobile Menu -->
-  @if (menuOpen()) {
-    <div class="navbar__mobile" role="navigation" aria-label="Mobile navigation">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}" class="navbar__mobile-link" (click)="closeMenu()">Home</a>
-      <a routerLink="/archive" routerLinkActive="is-active" class="navbar__mobile-link" (click)="closeMenu()">Archive</a>
-      <a routerLink="/about" routerLinkActive="is-active" class="navbar__mobile-link" (click)="closeMenu()">About</a>
-    </div>
-  }
-</header>
+  <!-- Spacer (desktop) / Hamburger (mobile) -->
+  <div class="navbar__spacer" aria-hidden="true"></div>
+
+  <button
+    class="navbar__burger"
+    [class.is-open]="menuOpen()"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Toggle navigation menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+@if (menuOpen()) {
+  <div class="navbar__mobile" role="navigation" aria-label="Mobile navigation">
+    <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}"
+       class="navbar__btn navbar__btn--home" (click)="closeMenu()">Home</a>
+    <a routerLink="/archive" routerLinkActive="is-active"
+       class="navbar__btn navbar__btn--archive" (click)="closeMenu()">Archive</a>
+    <a routerLink="/about" routerLinkActive="is-active"
+       class="navbar__btn navbar__btn--about" (click)="closeMenu()">About</a>
+  </div>
+}

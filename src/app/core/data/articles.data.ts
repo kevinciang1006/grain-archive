@@ -6,8 +6,8 @@ export const ARTICLES: Article[] = [
     title: 'Double Exposure and the Art of Memory',
     category: 'Visual',
     date: 'Mar 12, 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80',
-    imageAlt: 'Double exposure portrait blending forest and human silhouette',
+    imageUrl: 'https://images.pexels.com/photos/18279115/pexels-photo-18279115.jpeg?auto=compress&cs=tinysrgb&w=800',
+    imageAlt: 'Woman hands over river in forest',
     slug: 'double-exposure-art-of-memory',
   },
   {
@@ -15,8 +15,8 @@ export const ARTICLES: Article[] = [
     title: 'Buried in the Tall Grass: Field Recordings and Forgotten Sound',
     category: 'Music',
     date: 'Feb 28, 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80',
-    imageAlt: 'Person standing in tall golden grass at dusk',
+    imageUrl: 'https://images.pexels.com/photos/28055747/pexels-photo-28055747.jpeg?auto=compress&cs=tinysrgb&w=800',
+    imageAlt: 'A person lying with a book',
     slug: 'field-recordings-forgotten-sound',
   },
   {
@@ -24,8 +24,8 @@ export const ARTICLES: Article[] = [
     title: 'Bloom in Reverse: How Analog Film Became Our Nostalgia Engine',
     category: 'Film',
     date: 'Feb 14, 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1490750967868-88df5691b1f4?w=800&q=80',
-    imageAlt: 'Stylized dark floral arrangement with dramatic lighting',
+    imageUrl: 'https://images.pexels.com/photos/937789/pexels-photo-937789.jpeg?auto=compress&cs=tinysrgb&w=800',
+    imageAlt: 'Blue photo of petaled flowers',
     slug: 'bloom-in-reverse-analog-film',
   },
   {
@@ -33,8 +33,8 @@ export const ARTICLES: Article[] = [
     title: 'Mirror Studies: Reflective Surfaces in Contemporary Photography',
     category: 'Visual',
     date: 'Jan 30, 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=800&q=80',
-    imageAlt: 'Portrait reflected in fragmented mirrors creating surreal effect',
+    imageUrl: 'https://images.pexels.com/photos/13537948/pexels-photo-13537948.jpeg?auto=compress&cs=tinysrgb&w=800',
+    imageAlt: 'Woman holding mirror from behind',
     slug: 'mirror-studies-reflective-surfaces',
   },
   {

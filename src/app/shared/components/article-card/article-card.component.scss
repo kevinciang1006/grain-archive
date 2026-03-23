@@ -1,65 +1,89 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+@use 'styles/mixins' as *;
 
-  &__image-link {
-    display: block;
-    overflow: hidden;
+.card {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  flex: 1 0 0;
+  min-width: 600px;
+
+  @include tablet {
+    min-width: 400px;
+    height: 500px;
   }
 
-  &__image-wrap {
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
+  @include mobile {
+    min-width: 280px;
+    height: 420px;
+    flex: 0 0 85vw;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &:hover .card__image {
+      filter: blur(10px);
+      opacity: 0.8;
+    }
   }
 
   &__image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-slow);
-
-    .card:hover & {
-      transform: scale(1.04);
-    }
+    transition: filter 0.4s ease, opacity 0.4s ease;
   }
 
-  &__body {
+  &__gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    padding-top: var(--space-2);
+    gap: 4px;
   }
 
   &__meta {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-  }
-
-  &__date {
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    letter-spacing: var(--tracking-wide);
+    font-family: var(--font-geist);
+    font-feature-settings: "'ss01' 1, 'ss03' 1";
+    font-size: var(--text-p1);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-text-3);
+    margin: 0;
   }
 
   &__title {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-regular);
-    line-height: var(--leading-snug);
-    color: var(--color-text-primary);
-
-    a {
-      transition: color var(--transition-base);
-
-      &:hover {
-        color: var(--color-accent);
-        text-decoration: underline;
-        text-decoration-color: var(--color-border);
-        text-underline-offset: 4px;
-      }
-    }
+    font-family: var(--font-geist);
+    font-feature-settings: "'ss01' 1, 'ss03' 1";
+    font-size: var(--text-p1);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-text-1);
+    margin: 0;
   }
 }

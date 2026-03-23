@@ -1,23 +1,15 @@
 <article class="card">
-  <a [routerLink]="['/archive']" class="card__image-link">
-    <div class="card__image-wrap">
-      <img
-        [src]="article().imageUrl"
-        [alt]="article().imageAlt"
-        class="card__image"
-        loading="lazy"
-      />
+  <a [routerLink]="['/archive']" class="card__link" [attr.aria-label]="article().title">
+    <img
+      [src]="article().imageUrl"
+      [alt]="article().imageAlt"
+      class="card__image"
+      loading="lazy"
+    />
+    <div class="card__gradient" aria-hidden="true"></div>
+    <div class="card__overlay">
+      <p class="card__meta">{{ article().category }} · {{ article().date }}</p>
+      <h3 class="card__title">{{ article().title }}</h3>
     </div>
   </a>
-
-  <div class="card__body">
-    <div class="card__meta">
-      <app-category-badge [category]="article().category" />
-      <time class="card__date">{{ article().date }}</time>
-    </div>
-
-    <h3 class="card__title">
-      <a [routerLink]="['/archive']">{{ article().title }}</a>
-    </h3>
-  </div>
 </article>

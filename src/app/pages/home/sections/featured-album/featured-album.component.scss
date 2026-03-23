@@ -1,9 +1,17 @@
+@use 'styles/mixins' as *;
+
 .album {
   position: relative;
-  background: var(--color-bg-surface);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  background-color: #141414;
+  border-radius: var(--card-radius);
   overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    min-height: 480px;
+  }
 
   &__grain {
     position: absolute;
@@ -12,104 +20,109 @@
     z-index: 1;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-size: 256px 256px;
-    opacity: 0.04;
-    mix-blend-mode: overlay;
+    opacity: 0.6;
+    mix-blend-mode: screen;
   }
 
-  &__inner {
-    position: relative;
+  &__heading {
+    position: absolute;
+    top: 60px;
+    left: 10px;
     z-index: 2;
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-padding);
-    padding-block: var(--space-20);
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: var(--space-16);
-    align-items: center;
+    font-family: var(--font-tilt);
+    font-variation-settings: "'XROT' 0, 'YROT' 0";
+    font-weight: 400;
+    font-size: 160px;
+    line-height: 0.80;
+    letter-spacing: -8px;
+    color: var(--color-text-1);
+    max-width: 1000px;
+    pointer-events: none;
 
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
+    @include tablet {
+      font-size: 100px;
+      letter-spacing: -5px;
+      top: 40px;
+    }
+
+    @include mobile {
+      font-size: 64px;
+      letter-spacing: -3px;
+      top: 24px;
     }
   }
 
-  &__image-wrap {
+  &__content {
     position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 290px 20px 60px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -8px -8px 8px 8px;
-      border: 1px solid var(--color-border);
-      z-index: -1;
+    @include tablet {
+      padding-top: 200px;
+    }
+
+    @include mobile {
+      padding-top: 140px;
     }
   }
 
   &__image {
     width: 100%;
+    max-width: 600px;
     aspect-ratio: 1;
     object-fit: cover;
-    filter: saturate(0.5) brightness(0.85);
+    border-radius: 4px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+
+    @include mobile {
+      max-width: 280px;
+    }
   }
 
-  &__content {
+  &__info {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
-  &__label {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    letter-spacing: var(--tracking-widest);
-    text-transform: uppercase;
-    color: var(--color-accent);
-  }
-
-  &__title {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: var(--weight-regular);
-    letter-spacing: var(--tracking-tight);
-    color: var(--color-text-primary);
-    line-height: var(--leading-tight);
-  }
-
-  &__artist {
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    font-style: italic;
-  }
-
-  &__description {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    max-width: 480px;
-    margin-top: var(--space-2);
+  &__name {
+    font-family: var(--font-geist);
+    font-feature-settings: "'ss01' 1, 'ss03' 1";
+    font-size: var(--text-p1);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-text-1);
+    margin: 0;
   }
 
   &__cta {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
-    margin-top: var(--space-4);
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    letter-spacing: var(--tracking-wider);
-    text-transform: uppercase;
-    color: var(--color-text-primary);
-    padding: var(--space-3) var(--space-6);
-    border: 1px solid var(--color-border);
-    transition: background var(--transition-base), border-color var(--transition-base), gap var(--transition-base);
+    gap: 8px;
+    font-family: var(--font-geist);
+    font-feature-settings: "'ss01' 1, 'ss03' 1";
+    font-size: var(--text-p1);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    color: var(--color-text-1);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
 
-    &:hover {
-      background: var(--color-bg-elevated);
-      border-color: var(--color-accent-dim);
-      gap: var(--space-3);
-    }
+    &:hover { opacity: 0.7; }
   }
 }

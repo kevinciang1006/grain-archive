@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { ArticleCardComponent } from '../../shared/components/article-card/article-card.component';
 import { ARTICLES } from '../../core/data/articles.data';
 import { Article } from '../../core/models/article.model';
@@ -10,7 +11,7 @@ const FILTERS: FilterCategory[] = ['All', 'Film', 'Music', 'Visual'];
 
 @Component({
   selector: 'app-archive',
-  imports: [ArticleCardComponent],
+  imports: [NavbarComponent, ArticleCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [
