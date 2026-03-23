@@ -73,12 +73,12 @@
     font-family: var(--font-geist);
     font-feature-settings: "'ss01' 1, 'ss03' 1";
     font-size: var(--text-p1);
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.4px;
     color: var(--color-text-2);
 
-    &--film { flex: 1; font-weight: 600; }
+    &--film { flex: 1; }
     &--year { width: 160px; }
     &--mood { flex: 1; }
     &--why  { flex: 1; text-align: right; }

@@ -5,14 +5,42 @@
   border-radius: var(--card-radius);
   overflow: hidden;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  background-color: #F0EDE6;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 700px;
+  padding: 60px 10px;
 
   @include mobile {
-    flex-direction: column;
+    padding: 40px 10px;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__ticket {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    min-height: 464px;
+    max-width: 92vw;
+    overflow: hidden;
+    background-image: url("https://test-stage-86101369.figma.site/_assets/v11/243ad2cec4bbe48d8c5bc25518aea4722ff70dd5.png");
+    background-size: cover;
+    background-position: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__strip {
@@ -63,10 +91,11 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 24px;
     padding: 60px 40px;
+    text-align: center;
 
     @include mobile {
       padding: 40px 24px;

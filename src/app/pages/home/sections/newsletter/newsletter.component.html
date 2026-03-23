@@ -1,43 +1,54 @@
 <section class="newsletter" aria-label="Newsletter signup">
-  <!-- Left hole-punch strip -->
-  <div class="newsletter__strip newsletter__strip--left" aria-hidden="true">
-    <span class="newsletter__hole"></span>
-    <span class="newsletter__hole"></span>
-    <span class="newsletter__hole"></span>
-  </div>
+  <!-- Section background image -->
+  <img
+    class="newsletter__bg"
+    src="https://test-stage-86101369.figma.site/_assets/v11/d0e3c8c699748935cb2f37b831027faffffbaab2.png?h=1536"
+    alt=""
+    aria-hidden="true"
+  />
 
-  <!-- Main content -->
-  <div class="newsletter__inner">
-    <div class="newsletter__content">
-      <h2 class="newsletter__title">Tune into the signal</h2>
-      <p class="newsletter__sub">No noise — just deep cuts on music, film, and culture</p>
+  <!-- Strip (left hole-punch + content + right hole-punch) with ticket image -->
+  <div class="newsletter__ticket">
+    <!-- Left hole-punch strip -->
+    <div class="newsletter__strip newsletter__strip--left" aria-hidden="true">
+      <span class="newsletter__hole"></span>
+      <span class="newsletter__hole"></span>
+      <span class="newsletter__hole"></span>
     </div>
 
-    @if (!submitted()) {
-      <form class="newsletter__form" (ngSubmit)="onSubmit()">
-        <label for="newsletter-email" class="sr-only">Email address</label>
-        <input
-          id="newsletter-email"
-          type="email"
-          class="newsletter__input"
-          placeholder="your@email.com"
-          [ngModel]="email()"
-          (ngModelChange)="email.set($event)"
-          name="email"
-          required
-          autocomplete="email"
-        />
-        <button type="submit" class="newsletter__btn">Subscribe</button>
-      </form>
-    } @else {
-      <p class="newsletter__thanks">Signal received.</p>
-    }
-  </div>
+    <!-- Main content -->
+    <div class="newsletter__inner">
+      <div class="newsletter__content">
+        <h2 class="newsletter__title">Tune into the signal</h2>
+        <p class="newsletter__sub">No noise — just deep cuts on music, film, and culture</p>
+      </div>
 
-  <!-- Right hole-punch strip -->
-  <div class="newsletter__strip newsletter__strip--right" aria-hidden="true">
-    <span class="newsletter__hole"></span>
-    <span class="newsletter__hole"></span>
-    <span class="newsletter__hole"></span>
+      @if (!submitted()) {
+        <form class="newsletter__form" (ngSubmit)="onSubmit()">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            class="newsletter__input"
+            placeholder="your@email.com"
+            [ngModel]="email()"
+            (ngModelChange)="email.set($event)"
+            name="email"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="newsletter__btn">Subscribe</button>
+        </form>
+      } @else {
+        <p class="newsletter__thanks">Signal received.</p>
+      }
+    </div>
+
+    <!-- Right hole-punch strip -->
+    <div class="newsletter__strip newsletter__strip--right" aria-hidden="true">
+      <span class="newsletter__hole"></span>
+      <span class="newsletter__hole"></span>
+      <span class="newsletter__hole"></span>
+    </div>
   </div>
 </section>
