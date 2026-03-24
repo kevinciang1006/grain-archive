@@ -12,8 +12,8 @@ export class HeroComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const video = this.videoEl.nativeElement;
+    video.muted = true; // ensure muted as JS property, not just HTML attribute
     video.play().catch(() => {
-      // Retry once canplay fires (slow network / late DOM insert)
       video.addEventListener('canplay', () => video.play(), { once: true });
     });
   }
