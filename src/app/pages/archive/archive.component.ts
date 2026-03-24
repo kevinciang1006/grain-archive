@@ -3,11 +3,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { ArticleCardComponent } from '../../shared/components/article-card/article-card.component';
 import { EndMarqueeComponent } from '../../shared/components/end-marquee/end-marquee.component';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 import { ARTICLES } from '../../core/data/articles.data';
 
 @Component({
   selector: 'app-archive',
-  imports: [NavbarComponent, ArticleCardComponent, EndMarqueeComponent],
+  imports: [NavbarComponent, ArticleCardComponent, EndMarqueeComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [

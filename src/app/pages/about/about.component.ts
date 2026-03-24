@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-about',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [

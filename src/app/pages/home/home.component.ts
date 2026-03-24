@@ -5,6 +5,7 @@ import { HeroComponent } from './sections/hero/hero.component';
 import { ArticleGridComponent } from './sections/article-grid/article-grid.component';
 import { FeaturedAlbumComponent } from './sections/featured-album/featured-album.component';
 import { CinemaSelectsComponent } from './sections/cinema-selects/cinema-selects.component';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 @Component({
   selector: 'app-home',
   imports: [
@@ -13,6 +14,7 @@ import { CinemaSelectsComponent } from './sections/cinema-selects/cinema-selects
     ArticleGridComponent,
     FeaturedAlbumComponent,
     CinemaSelectsComponent,
+    ScrollRevealDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
@@ -72,10 +74,10 @@ import { CinemaSelectsComponent } from './sections/cinema-selects/cinema-selects
     </div>
     <app-navbar />
     <main @fadeIn>
-      <app-hero />
-      <app-article-grid />
-      <app-featured-album />
-      <app-cinema-selects />
+      <app-hero appScrollReveal />
+      <app-article-grid appScrollReveal />
+      <app-featured-album appScrollReveal />
+      <app-cinema-selects appScrollReveal />
     </main>
   `,
 })

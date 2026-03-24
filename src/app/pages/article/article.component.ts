@@ -5,11 +5,12 @@ import { map } from 'rxjs';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { EndMarqueeComponent } from '../../shared/components/end-marquee/end-marquee.component';
+import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 import { ARTICLES } from '../../core/data/articles.data';
 
 @Component({
   selector: 'app-article',
-  imports: [NavbarComponent, RouterLink, EndMarqueeComponent],
+  imports: [NavbarComponent, RouterLink, EndMarqueeComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [

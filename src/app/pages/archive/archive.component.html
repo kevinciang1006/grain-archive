@@ -1,17 +1,17 @@
 <app-navbar />
 <main class="archive" @fadeIn>
   <div class="archive__inner">
-    <header class="archive__header">
+    <header class="archive__header" appScrollReveal>
       <h1 class="archive__title">Archive</h1>
     </header>
 
     <!-- Article grid -->
-    <div class="archive__grid">
+    <div class="archive__grid" appScrollReveal>
       @for (article of articles; track article.id) {
         <app-article-card [article]="article" />
       }
     </div>
 
-    <app-end-marquee />
+    <app-end-marquee appScrollReveal />
   </div>
 </main>

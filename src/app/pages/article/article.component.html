@@ -4,7 +4,7 @@
   <main class="article" @fadeIn>
 
     <!-- Title block -->
-    <header class="article__header">
+    <header class="article__header" appScrollReveal>
       <h1 class="article__title">{{ a.title }}</h1>
       <p class="article__byline">
         <em>{{ a.category }} · {{ a.date }}</em>
@@ -12,22 +12,22 @@
     </header>
 
     <!-- Hero image -->
-    <img class="article__hero" [src]="a.imageUrl" [alt]="a.imageAlt" />
+    <img class="article__hero" appScrollReveal [src]="a.imageUrl" [alt]="a.imageAlt" />
 
     <!-- Intro -->
-    <div class="article__intro">
+    <div class="article__intro" appScrollReveal>
       <span class="article__label">Intro</span>
       <p class="article__excerpt">{{ a.excerpt }}</p>
     </div>
 
     <!-- Body card -->
-    <div class="article__card">
+    <div class="article__card" appScrollReveal>
       <div class="article__body" [innerHTML]="a.body"></div>
       <img src="article-footer.svg" alt="" class="article__divider" aria-hidden="true" />
     </div>
 
     <!-- More stories -->
-    <div class="article__more">
+    <div class="article__more" appScrollReveal>
       <span class="article__label">More stories</span>
       <div class="article__more-grid">
         @for (related of relatedArticles(); track related.id) {
