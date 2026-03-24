@@ -12,6 +12,11 @@
     max-width: var(--page-max);
     margin-inline: auto;
 
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 40px;
+    }
     @include mobile {
       flex-direction: column;
       align-items: flex-start;
@@ -29,17 +34,27 @@
     letter-spacing: -8px;
     color: var(--color-text-1);
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     @include tablet {
-      font-size: 120px;
+      font-size: 150px;
       letter-spacing: -5px;
+      flex-direction: row;
+      gap: 0.25em;
+      padding-bottom: 20px;
     }
 
     @include mobile {
       font-size: 80px;
       letter-spacing: -3px;
+      flex-direction: row;
+      gap: 0.2em;
     }
+  }
+
+  &__logo-word {
+    display: block;
   }
 
   &__right {
@@ -48,6 +63,13 @@
     align-items: flex-end;
     gap: 100px;
 
+    @include tablet {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 48px;
+      width: 100%;
+    }
     @include mobile {
       align-items: flex-start;
       gap: 48px;
@@ -59,6 +81,9 @@
     display: flex;
     gap: 80px;
 
+    @include tablet {
+      gap: 160px;
+    }
     @include mobile {
       gap: 48px;
     }
@@ -68,9 +93,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    // gap: 8px;
     width: 140px;
 
+    @include tablet {
+      align-items: flex-start;
+      width: auto;
+    }
     @include mobile {
       align-items: flex-start;
       width: auto;

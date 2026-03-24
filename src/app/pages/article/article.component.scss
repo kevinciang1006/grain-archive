@@ -24,6 +24,7 @@
     margin: 0 auto;
     width: 100%;
 
+    @include tablet { padding: 100px 16px 100px; }
     @include mobile { padding: 40px 16px 32px; }
   }
 
@@ -49,6 +50,7 @@
     color: var(--color-text-1);
     letter-spacing: -0.3px;
 
+    @include tablet { font-size: 60px; }
     @include mobile { font-size: 40px; }
   }
 
@@ -61,7 +63,8 @@
     object-fit: cover;
     border-radius: var(--card-radius);
 
-    @include tablet { width: calc(100% - 40px); margin: 0 20px; }
+    @include tablet { width: calc(100% - 40px); margin: 0 20px;
+    aspect-ratio: 14 / 9; }
     @include mobile { width: calc(100% - 24px); margin: 0 12px; }
   }
 
@@ -84,9 +87,9 @@
   &__label {
     font-family: var(--font-tilt);
     font-variation-settings: "'XROT' 0, 'YROT' 0";
-    font-size: var(--text-p1);
+    font-size: 24px;
     font-weight: 600;
-    // letter-spacing: -0.4px;
+    letter-spacing: -0.4px;
     color: var(--color-text-1);
     padding-top: 4px;
   }
@@ -167,15 +170,21 @@
 
   // ── More stories ─────────────────────────────────────────────
   &__more {
+    border-radius: var(--card-radius);
     display: grid;
     grid-template-columns: 120px 1fr;
     gap: 24px;
     padding: 48px 20px;
     max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
+    margin: auto 8px;
+    // width: 100%;
     align-items: start;
+    background-color: var(--color-bg-2);
 
+    @include tablet {
+      grid-template-columns: 1fr;
+      padding: 48px;
+    }
     @include mobile {
       grid-template-columns: 1fr;
       padding: 32px 16px;
@@ -187,7 +196,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 
-    @include tablet { grid-template-columns: repeat(2, 1fr); }
+    @include tablet { grid-template-columns: repeat(3, 1fr); gap: 24px;}
     @include mobile { grid-template-columns: 1fr; }
   }
 
@@ -210,6 +219,8 @@
     overflow: hidden;
     width: 100%;
     aspect-ratio: 3 / 3.5;
+
+    @include tablet { aspect-ratio: 1 / 1; }
   }
 
   &__more-img {

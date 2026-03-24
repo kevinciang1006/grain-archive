@@ -24,7 +24,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styles: [`
     .end-marquee {
       overflow: hidden;
-      padding: 24px 0;
+      padding: 60px 0;
     }
 
     .end-marquee__track {
@@ -35,10 +35,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       animation: end-marquee 20s linear infinite;
       font-family: 'Instrument Serif', sans-serif;
       font-style: italic;
-      font-size: 80px;
+      font-size: 60px;
       font-weight: 400;
       color: #fff;
       line-height: 1;
+
     }
 
     .end-marquee__dot {

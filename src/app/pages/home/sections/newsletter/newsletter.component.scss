@@ -11,6 +11,12 @@
   min-height: 700px;
   padding: 60px 10px;
 
+  @include tablet {
+    min-height: 540px;
+    padding: 60px 40px;
+    margin-top: 130px;
+  }
+
   @include mobile {
     padding: 40px 10px;
   }
@@ -32,11 +38,15 @@
     align-items: stretch;
     width: 100%;
     min-height: 464px;
-    max-width: 92vw;
+    max-width: 1276px;
     overflow: hidden;
     background-image: url("https://test-stage-86101369.figma.site/_assets/v11/243ad2cec4bbe48d8c5bc25518aea4722ff70dd5.png");
     background-size: cover;
     background-position: center;
+
+    @include tablet {
+      min-height: 364px;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -50,7 +60,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px 0;
 
     &--left {
       border-right: 1.5px dashed var(--color-text-2);
@@ -80,11 +90,11 @@
 
   &__hole {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background-color: var(--color-bg-1);
-    border: 1.5px solid #999;
+    // border: 1.5px solid #999;
   }
 
   &__inner {
@@ -112,10 +122,12 @@
     font-family: var(--font-instrument);
     font-style: italic;
     font-weight: 400;
-    font-size: var(--text-h4);
+    font-size: 80px;
     line-height: 0.9;
     letter-spacing: -1.6px;
     color: var(--color-text-2);
+
+    @include tablet { font-size: 60px; }
 
     @include mobile {
       font-size: 48px;
