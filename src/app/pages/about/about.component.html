@@ -1,61 +1,62 @@
 <app-navbar />
 <main class="about" @fadeIn>
-  <div class="about__inner">
-    <header class="about__header">
-      <span class="about__label">About</span>
-      <h1 class="about__title">We are interested in<br><em>what lingers</em></h1>
-    </header>
 
-    <div class="about__body">
-      <div class="about__text">
-        <p>
-          Grain Archive is an independent publication about film, music, and visual culture.
-          We write about the things that stay with you — images you can't stop thinking about,
-          records that feel like memories from a life you didn't live, films that linger long
-          after the credits roll.
-        </p>
-        <p>
-          We are not interested in the loudest or the newest. We are interested in texture,
-          in slowness, in the grain that emerges when you push things to the edge.
-          In the static between stations. In the light leak on the last frame.
-        </p>
-        <p>
-          Grain Archive is published by a small group of writers, photographers, and obsessives
-          who believe that the margins of culture are where the most interesting things happen.
-        </p>
-      </div>
+  <!-- Header -->
+  <header class="about__header">
+    <h1 class="about__title">About</h1>
+  </header>
 
-      <blockquote class="about__quote">
-        <p>"The image that moves us is always the one that wasn't meant to."</p>
-      </blockquote>
-
-      <div class="about__text">
-        <p>
-          We publish irregular dispatches — no fixed schedule, only when we have something
-          worth saying. Subscribe to the signal if you want to know when that is.
-        </p>
-      </div>
-    </div>
-
-    <div class="about__divider" aria-hidden="true"></div>
-
-    <div class="about__credits">
-      <div class="about__credit-item">
-        <span class="about__credit-role">Founded</span>
-        <span class="about__credit-value">2023</span>
-      </div>
-      <div class="about__credit-item">
-        <span class="about__credit-role">Based in</span>
-        <span class="about__credit-value">Distributed</span>
-      </div>
-      <div class="about__credit-item">
-        <span class="about__credit-role">Focus</span>
-        <span class="about__credit-value">Film · Music · Visual</span>
-      </div>
-      <div class="about__credit-item">
-        <span class="about__credit-role">Contact</span>
-        <a href="mailto:hello@grainarchive.com" class="about__credit-link">hello@grainarchive.com</a>
-      </div>
+  <!-- Image marquee -->
+  <div class="about__marquee" aria-hidden="true">
+    <div class="about__marquee-track">
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/327ebb9059b8517233897d8ffac701871904fbaf.png?h=578"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/129c223734af1592772734ca8e5453081e997d68.png?h=512"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/f7cbd3934cbe4b562514fe48a4ee01021ff6a99d.png?w=564"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/9267a2179c30f9b313986c8e295e0d6ffb577258.png?w=767"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/be2e3a0488089f1c66c3bede8a0d732badfdf701.png?w=583"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/ca77a98addcee84e4b287b148809a23bbecdacf6.png?w=931"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/79867e892cba4608bf371365b70d76e8c929c1e0.png?w=1828" alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/ec418c5c239d4ab529ec310aa7e1a6473030621d.png?h=256"  alt="" /></div>
+      <!-- duplicate for seamless loop -->
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/327ebb9059b8517233897d8ffac701871904fbaf.png?h=578"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/129c223734af1592772734ca8e5453081e997d68.png?h=512"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/f7cbd3934cbe4b562514fe48a4ee01021ff6a99d.png?w=564"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/9267a2179c30f9b313986c8e295e0d6ffb577258.png?w=767"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/be2e3a0488089f1c66c3bede8a0d732badfdf701.png?w=583"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/ca77a98addcee84e4b287b148809a23bbecdacf6.png?w=931"  alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/79867e892cba4608bf371365b70d76e8c929c1e0.png?w=1828" alt="" /></div>
+      <div class="about__marquee-item"><img src="https://test-stage-86101369.figma.site/_assets/v11/ec418c5c239d4ab529ec310aa7e1a6473030621d.png?h=256"  alt="" /></div>
     </div>
   </div>
+
+  <!-- Why this exists -->
+  <div class="about__row">
+    <span class="about__label">Why this exists</span>
+    <p class="about__text">
+      Grain Archive is a running record of the fuzz, fragments, and found moments in music, film,
+      and visual culture. From washed-out shoegaze to sun-faded celluloid, we document the tones
+      that don't always get clean airtime. Not everything needs to be polished to mean something.
+      Independently run by me, Casey Moth, and updated at the mercy of mood, memory, and whatever's
+      looping at 3am.
+    </p>
+  </div>
+
+  <!-- Feature image -->
+  <div class="about__image-wrap">
+    <img
+      src="https://test-stage-86101369.figma.site/_assets/v11/f2017e56bdc3fe5182c38c5f7e51b1a9013a49fe.png?h=1024"
+      alt="A figure seen through layered glass frames"
+      class="about__image"
+    />
+    <!-- Contact panel -->
+    <div class="about__contact">
+      <h2 class="about__contact-title">Contact</h2>
+      <p class="about__contact-text">Got a dusty VHS, a lost record, or a film no one talks about?</p>
+      <p class="about__contact-text">
+        Send recs, love letters, or questions to
+        <a href="mailto:mail@grainarchive.com" class="about__contact-link">mail@grainarchive.com</a>.
+      </p>
+    </div>
+  </div>
+
 </main>

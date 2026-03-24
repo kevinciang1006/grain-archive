@@ -1,7 +1,7 @@
 <nav class="navbar" aria-label="Main navigation">
   <!-- Logo -->
   <a routerLink="/" class="navbar__logo" aria-label="Grain Archive home" (click)="closeMenu()">
-    <img class="navbar__logo-img" src="logo.svg" alt="Grain Archive logo" />
+    <img class="navbar__logo-img" src="logo.svg" alt="Grain Archive logo" [style.transform]="'rotate(' + logoRotation() + 'deg)'" />
   </a>
 
   <!-- Desktop nav links -->

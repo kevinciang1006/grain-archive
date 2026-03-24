@@ -1,0 +1,54 @@
+<app-navbar />
+
+@if (article(); as a) {
+  <main class="article" @fadeIn>
+
+    <!-- Title block -->
+    <header class="article__header">
+      <h1 class="article__title">{{ a.title }}</h1>
+      <p class="article__byline">
+        <em>{{ a.category }} · {{ a.date }}</em>
+      </p>
+    </header>
+
+    <!-- Hero image -->
+    <img class="article__hero" [src]="a.imageUrl" [alt]="a.imageAlt" />
+
+    <!-- Intro -->
+    <div class="article__intro">
+      <span class="article__label">Intro</span>
+      <p class="article__excerpt">{{ a.excerpt }}</p>
+    </div>
+
+    <!-- Body card -->
+    <div class="article__card">
+      <div class="article__body" [innerHTML]="a.body"></div>
+      <img src="article-footer.svg" alt="" class="article__divider" aria-hidden="true" />
+    </div>
+
+    <!-- More stories -->
+    <div class="article__more">
+      <span class="article__label">More stories</span>
+      <div class="article__more-grid">
+        @for (related of relatedArticles(); track related.id) {
+          <a [routerLink]="['/article', related.slug]" class="article__more-card">
+            <div class="article__more-img-wrap">
+              <img [src]="related.imageUrl" [alt]="related.imageAlt" class="article__more-img" />
+            </div>
+            <p class="article__more-title">{{ related.title }}</p>
+            <span class="article__more-meta">{{ related.category }} · {{ related.date }}</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <app-end-marquee />
+  </main>
+}
+
+@if (!article()) {
+  <main class="article article--not-found" @fadeIn>
+    <p>Article not found.</p>
+    <a routerLink="/archive">← Back to Archive</a>
+  </main>
+}

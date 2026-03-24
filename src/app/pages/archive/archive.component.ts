@@ -1,17 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { NavbarComponent } from '../../layout/navbar/navbar.component';
 import { ArticleCardComponent } from '../../shared/components/article-card/article-card.component';
+import { EndMarqueeComponent } from '../../shared/components/end-marquee/end-marquee.component';
 import { ARTICLES } from '../../core/data/articles.data';
-import { Article } from '../../core/models/article.model';
-
-type FilterCategory = 'All' | 'Film' | 'Music' | 'Visual';
-
-const FILTERS: FilterCategory[] = ['All', 'Film', 'Music', 'Visual'];
 
 @Component({
   selector: 'app-archive',
-  imports: [NavbarComponent, ArticleCardComponent],
+  imports: [NavbarComponent, ArticleCardComponent, EndMarqueeComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeIn', [
@@ -25,17 +21,5 @@ const FILTERS: FilterCategory[] = ['All', 'Film', 'Music', 'Visual'];
   styleUrl: './archive.component.scss',
 })
 export class ArchiveComponent {
-  readonly filters: FilterCategory[] = FILTERS;
-  activeFilter = signal<FilterCategory>('All');
-
-  filteredArticles = computed<Article[]>(() => {
-    const filter = this.activeFilter();
-    return filter === 'All'
-      ? ARTICLES
-      : ARTICLES.filter(a => a.category === filter);
-  });
-
-  setFilter(filter: FilterCategory): void {
-    this.activeFilter.set(filter);
-  }
+  readonly articles = ARTICLES;
 }

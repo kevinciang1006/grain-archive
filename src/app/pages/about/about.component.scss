@@ -1,148 +1,173 @@
 @use 'styles/mixins' as *;
 
 .about {
-  min-height: 100dvh;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 0;
 
-  &__inner {
-    max-width: var(--page-max);
-    margin-inline: auto;
-    padding-inline: var(--page-padding);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
+  // ── Header ─────────────────────────────────────────────────────
   &__header {
-    padding: 40px 20px;
-    background-color: var(--color-bg-2);
-    border-radius: var(--card-radius);
-  }
+    padding: 80px 20px 60px;
+    text-align: center;
 
-  &__label {
-    font-family: var(--font-geist);
-    font-feature-settings: "'ss01' 1, 'ss03' 1";
-    font-size: var(--text-caption);
-    font-weight: 600;
-    line-height: 1.4;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    color: var(--color-text-3);
-    display: block;
-    margin-bottom: 16px;
+    @include mobile { padding: 48px 16px 40px; }
   }
 
   &__title {
     font-family: var(--font-tilt);
     font-variation-settings: "'XROT' 0, 'YROT' 0";
     font-weight: 400;
-    font-size: 110px;
-    line-height: 0.95;
-    letter-spacing: -4.4px;
+    font-size: 160px;
+    line-height: 0.9;
+    letter-spacing: -6px;
     color: var(--color-text-1);
 
-    em {
-      font-family: var(--font-instrument);
-      font-style: italic;
-      font-size: 80px;
-      line-height: 0.9;
-      letter-spacing: -1.6px;
-    }
-
-    @include tablet { font-size: 72px; em { font-size: 56px; } }
-    @include mobile { font-size: 48px; em { font-size: 40px; } }
+    @include tablet { font-size: 110px; letter-spacing: -4px; }
+    @include mobile { font-size: 72px;  letter-spacing: -2.5px; }
   }
 
-  &__body {
-    background-color: var(--color-bg-2);
-    border-radius: var(--card-radius);
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  // ── Image marquee ───────────────────────────────────────────────
+  &__marquee {
+    overflow: hidden;
+    padding: 100px 0 40px;
 
-    @include mobile { padding: 24px; }
+    &:hover .about__marquee-track {
+      animation-play-state: paused;
+    }
+  }
+
+  &__marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: max-content;
+    animation: about-marquee 60s linear infinite;
+  }
+
+  &__marquee-item {
+    flex-shrink: 0;
+    cursor: pointer;
+
+    img {
+      height: 320px;
+      width: auto;
+      display: block;
+      transition: transform 0.35s ease;
+
+      @include mobile { height: 200px; }
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes about-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  // ── Why this exists row ─────────────────────────────────────────
+  &__row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 100px;
+    padding: 110px 70px;
+
+    @include tablet {
+      grid-template-columns: 140px 1fr;
+      gap: 32px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 40px 16px;
+    }
+  }
+
+  &__label {
+    font-family: var(--font-geist);
+    font-feature-settings: "'ss01' 1, 'ss03' 1";
+    font-size: var(--text-p1);
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: var(--color-text-1);
+    padding-top: 4px;
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    p {
-      font-family: var(--font-geist);
-      font-feature-settings: "'ss01' 1, 'ss03' 1";
-      font-size: var(--text-p1);
-      font-weight: 400;
-      line-height: 1.4;
-      letter-spacing: -0.4px;
-      color: var(--color-text-4);
-    }
-  }
-
-  &__quote {
-    border-left: 2px solid var(--color-orange);
-    padding-left: 24px;
-
-    p {
-      font-family: var(--font-instrument);
-      font-style: italic;
-      font-size: 40px;
-      line-height: 1.1;
-      letter-spacing: -0.8px;
-      color: var(--color-text-1);
-
-      @include mobile { font-size: 28px; }
-    }
-  }
-
-  &__divider {
-    height: 1px;
-    background: var(--color-divider);
-  }
-
-  &__credits {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-
-    @include mobile { grid-template-columns: 1fr; }
-  }
-
-  &__credit-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  &__credit-role {
     font-family: var(--font-geist);
     font-feature-settings: "'ss01' 1, 'ss03' 1";
-    font-size: var(--text-caption);
+    font-size: 18px;
     font-weight: 600;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    color: var(--color-text-3);
+    line-height: 1.65;
+    letter-spacing: -0.2px;
+    color: var(--color-text-1);
+
+    @include mobile { font-size: 16px; }
   }
 
-  &__credit-value {
+  // ── Feature image + contact ─────────────────────────────────────
+  &__image-wrap {
+    position: relative;
+    margin: 0 10px 10px;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    align-items: stretch;
+
+    @include mobile { flex-direction: column; min-height: auto; margin: 0 8px 8px; }
+  }
+
+  &__image {
+    width: 50%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--card-radius);
+
+    @include mobile { width: 100%; height: 320px; }
+  }
+
+  &__contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 120px;
+    background-color: var(--color-bg-1);
+
+    @include mobile { padding: 32px 24px; }
+  }
+
+  &__contact-title {
+    font-family: var(--font-tilt);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--color-text-1);
+    margin: 0;
+  }
+
+  &__contact-text {
     font-family: var(--font-geist);
     font-feature-settings: "'ss01' 1, 'ss03' 1";
     font-size: var(--text-p1);
-    font-weight: 400;
-    color: var(--color-text-4);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    color: var(--color-text-1);
+    margin: 0;
   }
 
-  &__credit-link {
-    font-family: var(--font-geist);
-    font-feature-settings: "'ss01' 1, 'ss03' 1";
-    font-size: var(--text-p1);
-    font-weight: 400;
-    color: var(--color-orange);
+  &__contact-link {
+    color: var(--color-text-1);
     text-decoration: underline;
     transition: opacity 0.15s ease;
 
-    &:hover { opacity: 0.7; }
+    &:hover { opacity: 0.6; }
   }
 }

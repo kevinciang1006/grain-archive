@@ -6,9 +6,10 @@
   margin: 0 10px;
   z-index: var(--z-navbar);
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 10px;
   padding: 10px;
+  padding-bottom: 0;
   background: transparent;
 
   &__logo {
@@ -32,7 +33,7 @@
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 7px;
 
     @include mobile { display: none; }
   }
@@ -41,7 +42,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 12px;
+    padding: 12px 14px;
     font-family: var(--font-geist);
     font-feature-settings: "'ss01' 1, 'ss03' 1";
     font-size: var(--text-p1);

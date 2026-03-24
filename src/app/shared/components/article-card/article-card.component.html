@@ -1,5 +1,5 @@
 <article class="card">
-  <a [routerLink]="['/archive']" class="card__link" [attr.aria-label]="article().title">
+  <a [routerLink]="['/article', article().slug]" class="card__link" [attr.aria-label]="article().title">
     <img
       [src]="article().imageUrl"
       [alt]="article().imageAlt"

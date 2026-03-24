@@ -6,4 +6,6 @@ export interface Article {
   imageUrl: string;
   imageAlt: string;
   slug: string;
+  excerpt: string;
+  body: string;
 }

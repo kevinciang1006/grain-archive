@@ -2,30 +2,16 @@
 <main class="archive" @fadeIn>
   <div class="archive__inner">
     <header class="archive__header">
-      <h1 class="archive__title">The Archive</h1>
-      <p class="archive__sub">Every piece we've published — films, music, visual culture</p>
+      <h1 class="archive__title">Archive</h1>
     </header>
-
-    <!-- Filter tabs -->
-    <div class="archive__filters" role="tablist" aria-label="Filter articles by category">
-      @for (filter of filters; track filter) {
-        <button
-          class="archive__filter"
-          [class.is-active]="activeFilter() === filter"
-          (click)="setFilter(filter)"
-          role="tab"
-          [attr.aria-selected]="activeFilter() === filter"
-        >
-          {{ filter }}
-        </button>
-      }
-    </div>
 
     <!-- Article grid -->
     <div class="archive__grid">
-      @for (article of filteredArticles(); track article.id) {
+      @for (article of articles; track article.id) {
         <app-article-card [article]="article" />
       }
     </div>
+
+    <app-end-marquee />
   </div>
 </main>
