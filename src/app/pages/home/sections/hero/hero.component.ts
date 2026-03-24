@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,4 +7,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
-export class HeroComponent {}
+export class HeroComponent implements AfterViewInit {
+  @ViewChild('videoEl') videoEl!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit(): void {
+    const video = this.videoEl.nativeElement;
+    video.play().catch(() => {
+      // Retry once canplay fires (slow network / late DOM insert)
+      video.addEventListener('canplay', () => video.play(), { once: true });
+    });
+  }
+}
